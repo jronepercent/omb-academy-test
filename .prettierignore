@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+artifacts
+.env*
+supabase/*.sql
+supabase/migrations/*.sql
+package-lock.json
