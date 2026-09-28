@@ -1123,8 +1123,10 @@ tbody tr:last-child td {
   .course-cover {
     min-height: 240px;
   }
-  .cover-title {
-    font-size: 52px;
+  .cover-title,
+  .course-cover.large .cover-title {
+    font-size: clamp(30px, 8.5vw, 52px);
+    letter-spacing: -1px;
   }
   .learning-note {
     display: none;
