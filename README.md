@@ -160,6 +160,14 @@ git push -u origin HEAD
 
 Payment, community, chat, certificate, email automation, analytics ขั้นสูง, อัปโหลดวิดีโอ/รูป, และระบบ DRM ไม่รวมใน beta ตามบรีฟ
 
+## Stripe payment → เปิดคอร์สอัตโนมัติ
+
+โค้ดมี webhook ที่ `POST /api/stripe/webhook` แล้ว เมื่อได้รับ `checkout.session.completed` หรือ `payment_intent.succeeded` จะหา profile จากอีเมลผู้ชำระ และ upsert สิทธิ์ใน `enrollments` โดยใช้ `metadata.course_id` เป็น UUID ของคอร์ส
+
+ตั้งค่าใน Vercel (ห้าม commit ค่าเหล่านี้): `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `SUPABASE_SERVICE_ROLE_KEY` และใช้ URL webhook `https://YOUR_DOMAIN/api/stripe/webhook` ใน Stripe Dashboard → Developers → Webhooks เลือก event `checkout.session.completed` (แนะนำ) และ `payment_intent.succeeded` หากใช้งาน Payment Intent โดยตรง
+
+ตอนสร้าง Checkout Session ให้ใส่ metadata เช่น `{ course_id: "10000000-0000-4000-8000-000000000001" }` ทั้งที่ session และ PaymentIntent metadata ถ้าใช้ payment intent. ต้องให้อีเมลใน Stripe ตรงกับอีเมลบัญชี OMB ที่สมัครไว้ก่อน ระบบจะไม่สร้างบัญชีใหม่หรือเปิดสิทธิ์จากอีเมลที่ไม่พบ และ webhook ตรวจลายเซ็น Stripe ทุกครั้ง
+
 หลังเชื่อมบริการจริง ขั้นถัดไปคือทดสอบ end-to-end ด้วย admin/student จริง และเปลี่ยนชื่อแบรนด์/คอร์ส/วิดีโอตามเนื้อหาของคุณ
 
 ## เอกสารอ้างอิง
