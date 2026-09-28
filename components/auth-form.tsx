@@ -110,7 +110,7 @@ export function AuthForm({ mode, ready }: { mode: Mode; ready: boolean }) {
               ยังไม่ได้เชื่อมระบบบัญชีจริง
               <br />
               <Link className="text-link" href="/demo">
-                ทดลองหน้าเรียน beta →
+                  ดูตัวอย่างคอร์ส →
               </Link>
             </div>
           )}

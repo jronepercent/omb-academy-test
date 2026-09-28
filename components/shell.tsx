@@ -16,7 +16,6 @@ export function Brand() {
       <span>
         OMB<span className="brand-light"> ACADEMY</span>
       </span>
-      <span className="beta">BETA</span>
     </span>
   );
 }
@@ -102,7 +101,7 @@ export function Shell({
           <span className="muted">พื้นที่การเรียนรู้ของคุณ</span>
           <span className="topbar-right">
             {demo ? (
-              <span className="demo-pill">โหมดทดลอง</span>
+            <span className="demo-pill">ตัวอย่างคอร์ส</span>
             ) : (
               <span className="small">LEARN. BUILD. GROW.</span>
             )}
@@ -111,7 +110,7 @@ export function Shell({
         </header>
         {demo && (
           <div className="demo-banner">
-            BETA PREVIEW · คอร์สและวิดีโอตัวอย่าง
+            ตัวอย่างคอร์ส · เนื้อหาสาธิตสำหรับดูรูปแบบการเรียน
             ความคืบหน้าเก็บในเบราว์เซอร์นี้เท่านั้น
           </div>
         )}

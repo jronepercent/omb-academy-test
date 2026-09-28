@@ -39,7 +39,7 @@ export default async function Home() {
           </Link>
           <Link className="button secondary" href="/demo">
             <Play size={16} />
-            ทดลองใช้งาน beta
+              ดูตัวอย่างคอร์ส
           </Link>
         </div>
         <div className="landing-bottom">
@@ -47,7 +47,7 @@ export default async function Home() {
           <span>YOUR KNOWLEDGE. YOUR BUSINESS.</span>
         </div>
       </main>
-      <footer>OMB ACADEMY · BETA</footer>
+      <footer>OMB ACADEMY · LEARN. BUILD. GROW.</footer>
     </div>
   );
 }

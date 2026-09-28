@@ -270,7 +270,7 @@ export function LessonForm({
           type="checkbox"
           defaultChecked={lesson?.is_preview}
         />
-        กำหนดเป็นบทแนะนำ (beta ยังต้องมีสิทธิ์เข้าเรียน)
+          กำหนดเป็นบทแนะนำ (ผู้เรียนยังต้องได้รับสิทธิ์เข้าเรียน)
       </label>
     </SaveForm>
   );
